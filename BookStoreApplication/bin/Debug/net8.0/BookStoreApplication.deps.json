@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "BookStoreApplication/1.0.0": {
+        "dependencies": {
+          "BookStoreDomain": "1.0.0"
+        },
+        "runtime": {
+          "BookStoreApplication.dll": {}
+        }
+      },
+      "BookStoreDomain/1.0.0": {
+        "runtime": {
+          "BookStoreDomain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "BookStoreApplication/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BookStoreDomain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
