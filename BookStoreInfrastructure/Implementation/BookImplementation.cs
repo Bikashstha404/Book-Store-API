@@ -26,6 +26,32 @@ namespace BookStoreInfrastructure.Implementation
             return true;
         }
 
+        public List<Book> GetBookByName(string searchedName)
+        {
+            var books = new List<Book>();
+            var searchedbooks = new List<Book>();
+            books = _dbContext.Books.ToList();
+            foreach(var book in books)
+            {
+                var bookName = book.Name;
+                var result = true;
+                for(var i = 0; i < searchedName.Length; i++)
+                {
+                    if (bookName[i] == searchedName[i])
+                    {
+                        continue;
+                    }
+                    result = false;
+                    break;
+                }
+                if (result)
+                {
+                    searchedbooks.Add(book);
+                }
+            }
+            return searchedbooks;
+        }
+
         public List<Book> GetBooks()
         {
             var books = new List<Book>();

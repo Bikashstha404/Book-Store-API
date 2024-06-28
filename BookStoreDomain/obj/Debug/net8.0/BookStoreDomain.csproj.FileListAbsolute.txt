@@ -9,3 +9,15 @@ C:\Users\HP\source\repos\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDom
 C:\Users\HP\source\repos\BookStore\BookStoreDomain\obj\Debug\net8.0\refint\BookStoreDomain.dll
 C:\Users\HP\source\repos\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.pdb
 C:\Users\HP\source\repos\BookStore\BookStoreDomain\obj\Debug\net8.0\ref\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\bin\Debug\net8.0\BookStoreDomain.deps.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\bin\Debug\net8.0\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\bin\Debug\net8.0\BookStoreDomain.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.AssemblyInfoInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.AssemblyInfo.cs
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.csproj.CoreCompileInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.sourcelink.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\refint\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\BookStoreDomain.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreDomain\obj\Debug\net8.0\ref\BookStoreDomain.dll

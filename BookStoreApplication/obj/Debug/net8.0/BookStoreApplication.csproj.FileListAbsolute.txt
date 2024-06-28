@@ -13,3 +13,19 @@ C:\Users\HP\source\repos\BookStore\BookStoreApplication\bin\Debug\net8.0\BookSto
 C:\Users\HP\source\repos\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreDomain.pdb
 C:\Users\HP\source\repos\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.csproj.AssemblyReference.cache
 C:\Users\HP\source\repos\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStor.6F099366.Up2Date
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreApplication.deps.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreApplication.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreApplication.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\bin\Debug\net8.0\BookStoreDomain.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.csproj.AssemblyReference.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.AssemblyInfoInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.AssemblyInfo.cs
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.csproj.CoreCompileInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.sourcelink.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStor.6F099366.Up2Date
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\refint\BookStoreApplication.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\BookStoreApplication.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreApplication\obj\Debug\net8.0\ref\BookStoreApplication.dll

@@ -51,5 +51,16 @@ namespace BookStoreAPI.Controllers
             }
             return Ok(bookList);
         }
+
+        [HttpGet("GetBookByName")]
+        public IActionResult GetBookByName(string name)
+        {
+            var result = _iBook.GetBookByName(name);
+            if (result.Count == 0)
+            {
+                return BadRequest("The book is not available");
+            }
+            return Ok(result);
+        }
     }
 }

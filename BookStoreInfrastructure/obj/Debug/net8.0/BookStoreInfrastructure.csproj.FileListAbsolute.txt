@@ -17,3 +17,23 @@ C:\Users\HP\source\repos\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\Book
 C:\Users\HP\source\repos\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\ref\BookStoreInfrastructure.dll
 C:\Users\HP\source\repos\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreApplication.dll
 C:\Users\HP\source\repos\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreApplication.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreInfrastructure.deps.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreInfrastructure.runtimeconfig.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreInfrastructure.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreInfrastructure.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreApplication.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreDomain.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreApplication.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\bin\Debug\net8.0\BookStoreDomain.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.csproj.AssemblyReference.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.AssemblyInfoInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.AssemblyInfo.cs
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.csproj.CoreCompileInputs.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.sourcelink.json
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStor.902A62A0.Up2Date
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\refint\BookStoreInfrastructure.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.pdb
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\BookStoreInfrastructure.genruntimeconfig.cache
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreInfrastructure\obj\Debug\net8.0\ref\BookStoreInfrastructure.dll

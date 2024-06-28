@@ -12,5 +12,7 @@ namespace BookStoreApplication.Interface
         bool AddBook(Book book);
 
         List<Book> GetBooks();
+
+        List<Book> GetBookByName(string name);
     }
 }
