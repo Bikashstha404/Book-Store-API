@@ -14,5 +14,7 @@ namespace BookStoreApplication.Interface
         List<Book> GetBooks();
 
         List<Book> GetBookByName(string name);
+
+        List<Book> GetBookByPriceRange(int lowPrice, int highPrice);
     }
 }

@@ -62,5 +62,16 @@ namespace BookStoreAPI.Controllers
             }
             return Ok(result);
         }
+
+        [HttpGet("GetBookByPriceRange")]
+        public IActionResult GetBookByPricerange(int lowPrice, int highPrice)
+        {
+            var result = _iBook.GetBookByPriceRange(lowPrice, highPrice);
+            if (result.Count == 0)
+            {
+                return BadRequest("The price range of this book is not available");
+            }
+            return Ok(result);
+        }
     }
 }

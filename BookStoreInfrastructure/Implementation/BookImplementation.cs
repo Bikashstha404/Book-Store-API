@@ -52,6 +52,22 @@ namespace BookStoreInfrastructure.Implementation
             return searchedbooks;
         }
 
+        public List<Book> GetBookByPriceRange(int lowPrice, int highPrice)
+        {
+            var books = new List<Book>();
+            var searchedbooks = new List<Book>();
+            books = _dbContext.Books.ToList();
+            foreach(var book in books)
+            {
+                var bookPrice = book.Price;
+                if(bookPrice > lowPrice && bookPrice < highPrice)
+                {
+                    searchedbooks.Add(book);
+                }
+            }
+            return searchedbooks;
+        }
+
         public List<Book> GetBooks()
         {
             var books = new List<Book>();
