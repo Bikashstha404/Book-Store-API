@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 0,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  },
+  {
+    "Id": 0,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  }
+]

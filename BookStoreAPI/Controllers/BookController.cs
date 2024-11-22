@@ -1,10 +1,10 @@
 ﻿using BookStoreAPI.ViewModels;
 using BookStoreApplication.Interface;
 using BookStoreDomain;
-using BookStoreInfrastructure.Migrations;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.IO;
+using System.Text.Json;
+using System.Linq;
 
 namespace BookStoreAPI.Controllers
 {
@@ -12,66 +12,116 @@ namespace BookStoreAPI.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly IBook _iBook;
+        private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Books.txt");
 
-        public BookController(IBook iBook)
+        // Get all books
+        [HttpGet]
+        public IActionResult GetBooks()
         {
-            _iBook = iBook;
+            List<Book> books = LoadBooksFromFile();
+            return Ok(books);
         }
 
+        // Get a book by Id
+        [HttpGet("{id}")]
+        public IActionResult GetBook(int id)
+        {
+            List<Book> books = LoadBooksFromFile();
+            var book = books.FirstOrDefault(b => b.Id == id);
+            if (book == null)
+            {
+                return NotFound("Book not found");
+            }
+            return Ok(book);
+        }
+
+        // Add a new book
         [HttpPost("Add")]
         public IActionResult AddBook(AddBookViewModel addBookViewModel)
         {
+            List<Book> books = LoadBooksFromFile();
+
+            // Determine the next available ID
+            int nextId = books.Any() ? books.Max(b => b.Id) + 1 : 1;
+
             Book book = new Book
             {
+                Id = nextId,
                 Name = addBookViewModel.Name,
                 Price = addBookViewModel.Price,
                 Author = addBookViewModel.Author,
                 Genre = addBookViewModel.Genre,
             };
-            _iBook.AddBook(book);
-            return Ok();
+
+            books.Add(book);
+
+            // Save the updated list back to the file
+            SaveBooksToFile(books);
+
+            return Ok("Book added successfully");
         }
 
-        [HttpGet("List")]
-        public IActionResult ListBooks()
+        // Update an existing book
+        [HttpPut("Update/{id}")]
+        public IActionResult UpdateBook(int id, AddBookViewModel addBookViewModel)
         {
-            var books = _iBook.GetBooks();
+            List<Book> books = LoadBooksFromFile();
+            var book = books.FirstOrDefault(b => b.Id == id);
 
-            var bookList = new List<ListBookViewModel>();
-            foreach (var book in books)
+            if (book == null)
             {
-                bookList.Add(new ListBookViewModel()
-                {
-                    Name = book.Name,
-                    Author = book.Author,
-                    Genre = book.Genre,
-                    Price = book.Price
-                });
+                return NotFound("Book not found");
             }
-            return Ok(bookList);
+
+            // Update the book properties
+            book.Name = addBookViewModel.Name;
+            book.Price = addBookViewModel.Price;
+            book.Author = addBookViewModel.Author;
+            book.Genre = addBookViewModel.Genre;
+
+            // Save the updated list back to the file
+            SaveBooksToFile(books);
+
+            return Ok("Book updated successfully");
         }
 
-        [HttpGet("GetBookByName")]
-        public IActionResult GetBookByName(string name)
+        // Delete a book
+        [HttpDelete("Delete/{id}")]
+        public IActionResult DeleteBook(int id)
         {
-            var result = _iBook.GetBookByName(name);
-            if (result.Count == 0)
+            List<Book> books = LoadBooksFromFile();
+            var book = books.FirstOrDefault(b => b.Id == id);
+
+            if (book == null)
             {
-                return BadRequest("The book is not available");
+                return NotFound("Book not found");
             }
-            return Ok(result);
+
+            // Remove the book from the list
+            books.Remove(book);
+
+            // Save the updated list back to the file
+            SaveBooksToFile(books);
+
+            return Ok("Book deleted successfully");
         }
 
-        [HttpGet("GetBookByPriceRange")]
-        public IActionResult GetBookByPricerange(int lowPrice, int highPrice)
+        // Helper method to load books from file
+        private List<Book> LoadBooksFromFile()
         {
-            var result = _iBook.GetBookByPriceRange(lowPrice, highPrice);
-            if (result.Count == 0)
+            if (System.IO.File.Exists(_filePath))
             {
-                return BadRequest("The price range of this book is not available");
+                string existingData = System.IO.File.ReadAllText(_filePath);
+                return JsonSerializer.Deserialize<List<Book>>(existingData) ?? new List<Book>();
             }
-            return Ok(result);
+            return new List<Book>();
+        }
+
+        // Helper method to save books to file
+        private void SaveBooksToFile(List<Book> books)
+        {
+            string jsonData = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(_filePath, jsonData);
         }
     }
 }

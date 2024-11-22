@@ -283,3 +283,4 @@ D:\My Own Projects\7. Book Store API\BookStore\BookStoreAPI\obj\Debug\net8.0\ref
 D:\My Own Projects\7. Book Store API\BookStore\BookStoreAPI\obj\Debug\net8.0\BookStoreAPI.pdb
 D:\My Own Projects\7. Book Store API\BookStore\BookStoreAPI\obj\Debug\net8.0\BookStoreAPI.genruntimeconfig.cache
 D:\My Own Projects\7. Book Store API\BookStore\BookStoreAPI\obj\Debug\net8.0\ref\BookStoreAPI.dll
+D:\My Own Projects\7. Book Store API\BookStore\BookStoreAPI\bin\Debug\net8.0\data.json

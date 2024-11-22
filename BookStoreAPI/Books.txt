@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "Name": "1Book",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  },
+  {
+    "Id": 2,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  },
+  {
+    "Id": 3,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  },
+  {
+    "Id": 4,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  },
+  {
+    "Id": 5,
+    "Name": "string",
+    "Price": 0,
+    "Genre": "string",
+    "Author": "string"
+  }
+]
