@@ -1,5 +1,4 @@
 ﻿using BookStoreAPI.ViewModels;
-using BookStoreApplication.Interface;
 using BookStoreDomain;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
@@ -12,21 +11,21 @@ namespace BookStoreAPI.Controllers
     [ApiController]
     public class BookController : ControllerBase
     {
-        private readonly string _filePath = Path.Combine(Directory.GetCurrentDirectory(), "Books.txt");
-
         // Get all books
         [HttpGet]
-        public IActionResult GetBooks()
+        public IActionResult GetBooks(string fileName)
         {
-            List<Book> books = LoadBooksFromFile();
+            string filePath = GetFilePath(fileName + ".txt");
+            List<Book> books = LoadBooksFromFile(filePath);
             return Ok(books);
         }
 
         // Get a book by Id
         [HttpGet("{id}")]
-        public IActionResult GetBook(int id)
+        public IActionResult GetBook(int id, string fileName)
         {
-            List<Book> books = LoadBooksFromFile();
+            string filePath = GetFilePath(fileName);
+            List<Book> books = LoadBooksFromFile(filePath);
             var book = books.FirstOrDefault(b => b.Id == id);
             if (book == null)
             {
@@ -37,9 +36,10 @@ namespace BookStoreAPI.Controllers
 
         // Add a new book
         [HttpPost("Add")]
-        public IActionResult AddBook(AddBookViewModel addBookViewModel)
+        public IActionResult AddBook([FromBody] AddBookViewModel addBookViewModel)
         {
-            List<Book> books = LoadBooksFromFile();
+            string filePath = GetFilePath(addBookViewModel.FileName + ".txt"); // Use the file name from the request
+            List<Book> books = LoadBooksFromFile(filePath);
 
             // Determine the next available ID
             int nextId = books.Any() ? books.Max(b => b.Id) + 1 : 1;
@@ -56,16 +56,17 @@ namespace BookStoreAPI.Controllers
             books.Add(book);
 
             // Save the updated list back to the file
-            SaveBooksToFile(books);
+            SaveBooksToFile(filePath, books);
 
             return Ok("Book added successfully");
         }
 
         // Update an existing book
         [HttpPut("Update/{id}")]
-        public IActionResult UpdateBook(int id, AddBookViewModel addBookViewModel)
+        public IActionResult UpdateBook(int id, [FromBody] AddBookViewModel addBookViewModel)
         {
-            List<Book> books = LoadBooksFromFile();
+            string filePath = GetFilePath(addBookViewModel.FileName); // Use the file name from the request
+            List<Book> books = LoadBooksFromFile(filePath);
             var book = books.FirstOrDefault(b => b.Id == id);
 
             if (book == null)
@@ -80,16 +81,17 @@ namespace BookStoreAPI.Controllers
             book.Genre = addBookViewModel.Genre;
 
             // Save the updated list back to the file
-            SaveBooksToFile(books);
+            SaveBooksToFile(filePath, books);
 
             return Ok("Book updated successfully");
         }
 
         // Delete a book
         [HttpDelete("Delete/{id}")]
-        public IActionResult DeleteBook(int id)
+        public IActionResult DeleteBook(int id, string fileName)
         {
-            List<Book> books = LoadBooksFromFile();
+            string filePath = GetFilePath(fileName); // Use the file name from the request
+            List<Book> books = LoadBooksFromFile(filePath);
             var book = books.FirstOrDefault(b => b.Id == id);
 
             if (book == null)
@@ -101,27 +103,33 @@ namespace BookStoreAPI.Controllers
             books.Remove(book);
 
             // Save the updated list back to the file
-            SaveBooksToFile(books);
+            SaveBooksToFile(filePath, books);
 
             return Ok("Book deleted successfully");
         }
 
-        // Helper method to load books from file
-        private List<Book> LoadBooksFromFile()
+        // Helper method to get the file path based on the file name
+        private string GetFilePath(string fileName)
         {
-            if (System.IO.File.Exists(_filePath))
+            return Path.Combine(Directory.GetCurrentDirectory(), fileName);
+        }
+
+        // Helper method to load books from file
+        private List<Book> LoadBooksFromFile(string filePath)
+        {
+            if (System.IO.File.Exists(filePath))
             {
-                string existingData = System.IO.File.ReadAllText(_filePath);
+                string existingData = System.IO.File.ReadAllText(filePath);
                 return JsonSerializer.Deserialize<List<Book>>(existingData) ?? new List<Book>();
             }
             return new List<Book>();
         }
 
         // Helper method to save books to file
-        private void SaveBooksToFile(List<Book> books)
+        private void SaveBooksToFile(string filePath, List<Book> books)
         {
             string jsonData = JsonSerializer.Serialize(books, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(_filePath, jsonData);
+            System.IO.File.WriteAllText(filePath, jsonData);
         }
     }
 }
